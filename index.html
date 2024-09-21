@@ -1,53 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
-</head>
-<body>
-    <div class="container">
-        <form id="registration-form">
-            <h2>Registration Form</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-500">
+    <div class="flex flex-col md:flex-row justify-center items-center md:space-x-10">
+      <div
+        class="flex flex-col justify-center items-center bg-white border-2 border-gray-900 shadow-md rounded-lg w-full max-w-md p-10 mt-10"
+      >
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+          User Registration
+        </h1>
+        <form id="user-form">
+          <label for="name" class="block font-semibold mb-2">Name</label>
+          <input
+            required
+            type="text"
+            id="name"
+            name="name"
+            class="w-full rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 border border-black"
+            placeholder="Enter full name"
+          />
 
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter full name" required>
+          <label for="email" class="block font-semibold mb-2">Email</label>
+          <input
+            required
+            type="email"
+            id="email"
+            name="email"
+            class="w-full rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 border border-black"
+            placeholder="Enter email"
+          />
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter email" required>
+          <label for="password" class="block font-semibold mb-2">Password</label>
+          <input
+            required
+            type="password"
+            id="password"
+            name="password"
+            class="w-full rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 border border-black"
+            placeholder="Enter password"
+          />
 
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter password" required>
+          <label for="dob" class="block font-semibold mb-2">Date of Birth</label>
+          <input
+            required
+            type="date"
+            id="dob"
+            name="dob"
+            class="w-full rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 border border-black"
+          />
 
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" required>
+          <div class="flex items-center justify-center gap-2 mt-4">
+            <input
+              required
+              type="checkbox"
+              id="acceptTerms"
+              name="acceptTerms"
+              class="mr-2"
+            />
+            <label for="acceptTerms" class="block font-semibold">Accept Terms & Conditions</label>
+          </div>
 
-            <label for="terms">
-                <input type="checkbox" id="terms" required> Accept Terms & Conditions
-            </label>
-
-            <button type="submit">Submit</button>
+          <div class="flex justify-center mt-6">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white rounded-md px-4 py-2"
+            >
+              Submit
+            </button>
+          </div>
         </form>
+      </div>
 
-        <h2>Entries</h2>
-        <table id="entries-table">
+      <!-- User Entries Table Section -->
+      <div class="flex flex-col justify-center items-center bg-white border-2 border-gray-900 shadow-md rounded-lg w-full max-w-lg p-10 mt-10">
+        <h2 class="text-2xl font-bold text-center text-gray-800 w-full">
+          User Entries
+        </h2>
+        <div class="w-full mt-5 max-h-[31rem] overflow-y-auto">
+          <table class="w-full table-auto">
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Dob</th>
-                    <th>Accepted terms?</th>
-                </tr>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-900 px-4 py-2">Name</th>
+                <th class="border border-gray-800 px-4 py-2">Email</th>
+                <th class="border border-gray-800 px-4 py-2">Password</th>
+                <th class="border border-gray-800 px-4 py-2">DOB</th>
+                <th class="border border-gray-800 px-4 py-2">Accepted Terms?</th>
+              </tr>
             </thead>
-            <tbody id="data-table-body">
-                <!-- Entries will be dynamically inserted here -->
+            <tbody id="user-entries-table">
+         
+              <tr>
+                <td class="border border-gray-800 px-4 py-2">John Doe</td>
+                <td class="border border-gray-800 px-4 py-2">john@example.com</td>
+                <td class="border border-gray-800 px-4 py-2">********</td>
+                <td class="border border-gray-800 px-4 py-2">01/01/1990</td>
+                <td class="border border-gray-800 px-4 py-2">Yes</td>
+              </tr>
             </tbody>
-        </table>
+          </table>
+        </div>
+      </div>
     </div>
-
-    <script src="index.js"></script> <!-- Add your JavaScript file here -->
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
-
